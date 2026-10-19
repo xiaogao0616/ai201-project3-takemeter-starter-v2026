@@ -53,60 +53,60 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+The classifier must achieve at least 75% accuracy on the held-out test set for each of the three seeds.
 
 
 
 **Why this number:**
-
+My dataset has 266 posts, including 147 labeled share. Predicting share for everything would already achieve about 55% accuracy, so 75% requires a meaningful improvement over that baseline while allowing some mistakes on sarcastic and mixed-purpose posts.
 
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+The classifier must achieve a macro-F1 of at least 0.65 on the held-out test set for each of the three seeds.
 
 
 
 **Why this number:**
-
+share accounts for more than half of my dataset, while vent has only 31 examples. A macro-F1 target of 0.65 requires useful performance across all four labels rather than allowing the largest label to dominate the result.
 
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
+The question label must achieve an F1 of at least 0.60 on the held-out test set for each of the three seeds.
 
 
 
 **Why this number:**
-
+I have only 37 question posts, so a 15% test split would contain roughly six of them. A few mistakes could change the score substantially, especially because genuine requests for answers must be distinguished from rhetorical questions expressing opinions or complaints.
 
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
+The classifier must achieve an F1 of at least 0.60 for opinion and 0.50 for vent on the held-out test set for each of the three seeds.
 
 
 
 **Why this number:**
-
+The distinction depends on whether a post contains an arguable claim, not whether it sounds angry or sarcastic. I have 51 opinion posts but only 31 vent posts, so I set a lower minimum for vent because its test score will be especially sensitive to individual mistakes across seeds.
 
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
+A second person must independently label 40 posts, including 20 marked as hard and 20 randomly selected from the remaining posts. Our labels must agree on at least 80% of those posts before discussing disagreements.
 
 
 
 **Why this number:**
-
+Half the sample deliberately tests difficult boundaries, including sarcasm, rhetorical questions, and news with added judgments. Agreement on at least 32 of 40 posts would provide evidence that my labeling rules are understandable and repeatable beyond the easiest examples.
 
 
 ---
