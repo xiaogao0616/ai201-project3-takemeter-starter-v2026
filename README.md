@@ -128,19 +128,19 @@ Related rules for the other boundaries:
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** The 400 newest posts on r/MCFC, pulled from the subreddit's RSS feed with `fetch_posts.py` (Reddit blocks the `.json` endpoint) into `raw_posts.csv`. I kept 266: posts that can't be understood without their image or video were removed, and so were exact duplicates (mostly the repeated Daily Discussion thread). Post text is not trimmed.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** AI pre-labeled the batch and I reviewed and corrected every row; the first 20 rows were labeled cold (by hand, before seeing any AI labels). Rows where the AI was unsure between two labels say why in the `note` column.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `share` | 147 | 55% |
+| `opinion` | 51 | 19% |
+| `question` | 37 | 14% |
+| `vent` | 31 | 12% |
+| **Total** | 266 | 100% |
 
 **Three hard cases**
 
@@ -176,15 +176,26 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, max length 128 tokens, seed 42. Trained on **cpu** (no GPU), torch 2.14.1+cpu.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing; all defaults.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+
+train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
+
+| Label | train | val | test |
+|---|---|---|---|
+| `share` | 103 | 22 | 22 |
+| `question` | 26 | 6 | 5 |
+| `vent` | 22 | 4 | 5 |
+| `opinion` | 35 | 8 | 8 |
+
+`question` and `vent` have only 5 test examples each (under ~8), so their F1 will swing a lot between seeds.
 
 
 
@@ -211,7 +222,7 @@ of next unit's variance. -->
 - *What came back:*
 - *What I changed:*
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** AI pre-labeled the batch and I reviewed and corrected every row; the first 20 rows were labeled cold (by hand, before seeing any AI labels).
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
