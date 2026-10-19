@@ -113,7 +113,11 @@ Example borderline post:
 > How can we compete against a state owned club like PSG??
 
 **The decision rule I used every time:**
-If the post contains a specific claim or recommendation that someone could disagree with (e.g. "we should sell him", "he's overrated", "Pep should start Foden"), it is `opinion`, even if the tone is angry. If it only expresses feeling, or uses a question just to complain, with no arguable claim, it is `vent`. A question only counts as `question` if the poster actually wants answers from the community.
+If the post contains a specific claim or recommendation that someone could disagree with (e.g. "we should sell him", "he's overrated", "Pep should start Foden"), it is `opinion`, even if the tone is angry. If it only expresses feeling, or uses a question just to complain, with no arguable claim, it is `vent`. Exaggerated complaints with no specific match, player, or decision named (e.g. "Why do refs ALWAYS give it against us???") are also `vent`.
+
+Related rules for the other boundaries:
+- `question` vs `opinion`: A question only counts as `question` if the poster actually wants answers from the community. If the question is just wrapping a clear claim (e.g. "Is it just me or has Rodri looked slow?", "We should start X. Who's with me?"), label it by the claim, which is usually `opinion`.
+- `share` vs `opinion`: If the main point is a stat, result, or news item and any judgment is one short add-on (e.g. "OFFICIAL: X signs a new deal. Massive news!"), it is `share`. If the judgment is the main point and the stat is used as evidence for it, it is `opinion`.
 
 
 
@@ -143,26 +147,28 @@ Say so plainly — the disclosure is required, not penalised. -->
 <!-- Any post that made you pause: what it was, which two labels it could have
      been, and what you chose. These are worth more than the easy 190. -->
 
+*(Drafted during AI pre-labeling; every hard call is also written in that row's `note` column in labels.csv.)*
+
 **1.**
-> *The post:*
+> *The post:* "I am confident we are going to beat Liverpool! 🩵"
 >
-> *Could have been:*
+> *Could have been:* `vent` or `opinion`
 >
-> *I chose, because:*
+> *I chose, because:* `vent`. Someone could disagree with a prediction, but it isn't a judgment or recommendation about a player, the manager or the club. It's pre-match hype, so the main content is the feeling.
 
 **2.**
-> *The post:*
+> *The post:* "Why is leaving a club a billion dollars in debt like United okay but investing in your club isn't? Anybody explain that to me?"
 >
-> *Could have been:*
+> *Could have been:* `question` or `opinion`
 >
-> *I chose, because:*
+> *I chose, because:* `opinion`. The question is rhetorical: the poster isn't looking for an answer. It carries an arguable claim that critics of City's spending apply a double standard, so under my rule it is `opinion`, not `question`.
 
 **3.**
-> *The post:*
+> *The post:* "[BBC] worried about Man City being in next season's Champions League. BBC Sport has been told that there is no automatic mechanism to remove City from a European competition they qualify for on sporting merit. Even the Beeb is this biased..."
 >
-> *Could have been:*
+> *Could have been:* `share` or `opinion`
 >
-> *I chose, because:*
+> *I chose, because:* `share`. Almost all of the post is the BBC news, with a one-line jab at the end. "Biased" is arguable, but it's aimed at the media rather than a player, the manager or the club, and it isn't the point of the post.
 
 ---
 
