@@ -154,7 +154,7 @@ Related rules for the other boundaries:
 >
 > *Could have been:* `vent` or `opinion`
 >
-> *I chose, because:* `vent`. Someone could disagree with a prediction, but it isn't a judgment or recommendation about a player, the manager or the club. It's pre-match hype, so the main content is the feeling.
+> *I chose, because:* `opinion`. The AI pre-labeled it `vent` because it reads like pre-match hype, but I changed it. "We are going to beat Liverpool" is a claim about the club that someone could argue against, and my rule says an arguable claim makes a post `opinion` even when the tone is emotional.
 
 **2.**
 > *The post:* "Why is leaving a club a billion dollars in debt like United okay but investing in your club isn't? Anybody explain that to me?"
@@ -212,15 +212,15 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* I had Claude pre-label rows 21–266 in labels.csv using my four labels and the decision rules in my README. I also asked it to leave a short reason in the note column whenever a post could fit two labels.
+- *What came back:* It labeled all 246 rows: 131 share, 42 opinion, 40 vent, and 33 question. It marked 49 of them as "hard" and gave a one-line reason for each.
+- *What I changed:* I went through every row and changed 12 labels. Nine of those were posts it called `vent` that I moved, mostly to `opinion`. The AI kept treating sarcasm and rhetorical complaints as pure emotion. But a post like the satirical "Official Guidelines for Conducting Yourself as a Manchester City Supporter," or "According to VAR Bruno does nothing to Foden...," still makes a point you could argue with (rival fans are hypocrites, the VAR call was wrong). By my own rule, that makes them `opinion`. I also moved "Congrats to Semenyo and his new wife" from `vent` to `share`, since it's club news and has nothing to do with frustration.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* After I wrote my five criteria, I asked Claude whether someone else could check each one without having to ask me what I meant. I told it not to suggest different numbers.
+- *What came back:* It said criteria 1–4 were clear enough. Criterion 5, the one about agreeing with a second labeler, had three gaps. It didn't say how the 20 hard posts would be chosen out of the 49, whether cold rows could be included, or which rules the second person would follow.
+- *What I changed:* I rewrote criterion 5 myself. The 20 posts are now picked at random with seed 42 from rows whose note contains "hard:", cold rows can be included, and the second labeler only gets the definitions in my README, not my labels or notes. I kept the 80% target.
 
 **Pre-labelling disclosure:** AI pre-labeled the batch and I reviewed and corrected every row; the first 20 rows were labeled cold (by hand, before seeing any AI labels).
 
