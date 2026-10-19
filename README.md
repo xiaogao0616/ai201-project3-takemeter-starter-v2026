@@ -39,8 +39,14 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
+My community is r/MCFC (https://www.reddit.com/r/MCFC/). I chose it because I am a big Manchester City fan. While reading 30–40 posts, I noticed four distinctions:
+
+1. Some posts contain a score or other numbers. These are usually sharing the result or stats of a recent match.
+2. Some posts end with a question mark. These are usually asking the community for opinions.
+3. Some posts make a clear judgment about a player or the club, often with words like "should", "sell", or "overrated". These are usually fan opinions.
+4. Some posts contain emojis or lots of exclamation marks. These are usually memes or emotional reactions rather than serious discussion.
+
+Note: many posts in this community rely on images. Since the model only sees text, I will skip posts that cannot be understood without the image.
 
 
 
@@ -54,33 +60,60 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `share`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** Shares a match result, stats, or club news (press conference, transfer) with little or no personal opinion.
 
 **Example 1:**
->
+>[Post Match Thread] Man City 2 - 4 Paris Saint-Germain (UEFA Champions League, League Phase)
 
 **Example 2:**
->
+>Phil Foden has scored 111 goals for Manchester City, and none of them have been penalties
+
+### `question`
+
+**Definition:** Genuinely asks the community for information or their views.
+
+
+**Example 1:**
+>Which jersey do you like the most?
+
+**Example 2:**
+>What is something different you've seen in Enzo compared to Pep? What is something they have in common?
+
+### `vent`
+
+**Definition:** Mainly expresses emotion (anger, joy, frustration) without a claim others could argue with.
+
+
+**Example 1:**
+>Banana nanananaaa nanananaaa Cityyyy!!!
+
+**Example 2:**
+>Fuck the 114 charges The show must go on…
+
+### `opinion`
+
+**Definition:** Makes a clear judgment or recommendation about a player, the manager, or the club.
+
+
+**Example 1:**
+>Don’t get me wrong. Elliot was immense in the game, but this man got robbed not getting MOTM. Literally involved in every single goal and the red card. Best winger on the planet atm hands down.
+
+**Example 2:**
+>Iliman Ndiaye appreciation post. He’s had such an electric start to the season. I can’t imagine what we’d look like if we were still stuck with Savinho (no offence). What an upgrade!
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `opinion` vs `vent`
+
+Both kinds of posts are emotional and often negative about the team, a player, or the manager. The difference is whether there is a claim someone could actually argue against.
+
+Example borderline post:
+> How can we compete against a state owned club like PSG??
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+If the post contains a specific claim or recommendation that someone could disagree with (e.g. "we should sell him", "he's overrated", "Pep should start Foden"), it is `opinion`, even if the tone is angry. If it only expresses feeling, or uses a question just to complain, with no arguable claim, it is `vent`. A question only counts as `question` if the poster actually wants answers from the community.
 
 
 
