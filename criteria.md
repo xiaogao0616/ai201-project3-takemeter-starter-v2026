@@ -101,12 +101,14 @@ The distinction depends on whether a post contains an arguable claim, not whethe
 
 ## 5.
 
-A second person must independently label 40 posts, including 20 marked as hard and 20 randomly selected from the remaining posts. Our labels must agree on at least 80% of those posts before discussing disagreements.
+A second person must independently label 40 posts: 20 randomly sampled from posts whose note contains hard:, and 20 randomly sampled from posts without that marker, including the 20 cold posts as eligible candidates. Sampling must be without replacement, using a fixed random seed of 42.
+
+The second person must use only the label definitions and decision rules in the README, without seeing the existing labels or notes and without asking me for clarification until labeling is complete. Our labels must agree on at least 80% of the 40 posts before discussing disagreements.
 
 
 
 **Why this number:**
-Half the sample deliberately tests difficult boundaries, including sarcasm, rhetorical questions, and news with added judgments. Agreement on at least 32 of 40 posts would provide evidence that my labeling rules are understandable and repeatable beyond the easiest examples.
+Half the sample deliberately tests difficult boundaries, while the other half represents posts not marked as hard. Agreement on at least 32 of 40 posts would provide evidence that another person can apply my documented rules consistently without my help.
 
 
 ---
