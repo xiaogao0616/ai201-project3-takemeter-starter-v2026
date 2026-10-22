@@ -238,10 +238,14 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.375 | 0.550 | +0.175 |
+| Macro F1 | 0.324 | 0.177 | -0.147 |
+| F1 — `opinion` | 0.370 | 0.000 | -0.370 |
+| F1 — `question` | 0.556 | 0.000 | -0.556 |
+| F1 — `share` | 0.370 | 0.710 | +0.339 |
+| F1 — `vent` | 0.000 | 0.000 | +0.000 |
+
+Baseline: `facebook/bart-large-mnli` zero-shot with my definitions from `label_definitions.txt`, scored on the same 40 posts in `test_split.csv`. A second run with bare label names only (`baseline_results_bare.json`) got accuracy 0.500 and macro F1 0.360.
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
