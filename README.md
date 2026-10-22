@@ -267,11 +267,11 @@ I predict my trained model will lose on all four features, because it only learn
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1. Overall accuracy |  | 0.550 | 0.550 | 0.550 |  |
-| 2. Macro F1 |  | 0.177 | 0.177 | 0.177 |  |
-| 3. F1 — `question` |  | 0.000 | 0.000 | 0.000 |  |
-| 4. F1 — `opinion` / `vent` |  | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 |  |
-| 5. Agreement with a second labeler |  | — | — | — |  |
+| 1. Overall accuracy | 0.75 | 0.550 | 0.550 | 0.550 | MISSED |
+| 2. Macro F1 | 0.65 | 0.177 | 0.177 | 0.177 | MISSED |
+| 3. F1 — `question` | 0.60 | 0.000 | 0.000 | 0.000 | MISSED |
+| 4. F1 — `opinion` / `vent` | 0.60 / 0.50 | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 | MISSED |
+| 5. Agreement with a second labeler | 80% | — | — | — | NOT TESTED YET |
 
 Device: **cpu** (torch 2.14.1+cpu), all three seeds. Full numbers in `results_three_seeds_before.json`.
 
@@ -299,9 +299,8 @@ Seed 42 (seeds 7 and 2024 are identical):
 | **opinion** | 8 | 0 | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
+
+8 real posts were recognized as share, and 0 real post went to the other categories. The model did not learn how to classify share versus categories. It simply predicts the majority label share for every post.
 
 
 
