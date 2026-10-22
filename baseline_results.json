@@ -1,0 +1,240 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 40,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 40,
+    "accuracy": 0.375,
+    "f1_macro": 0.32407407407407407,
+    "per_label": {
+      "opinion": {
+        "precision": 0.2631578947368421,
+        "recall": 0.625,
+        "f1": 0.37037037037037035,
+        "support": 8
+      },
+      "question": {
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "f1": 0.5555555555555556,
+        "support": 5
+      },
+      "share": {
+        "precision": 1.0,
+        "recall": 0.22727272727272727,
+        "f1": 0.37037037037037035,
+        "support": 22
+      },
+      "vent": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "FA statement on Manchester City\nhttps://www.thefa.com/news/2026/oct/02/fa-statement-on-manchester-city-20260210",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Liverpool 0 - [3] Manchester City - Rayan Cherki 78\u200e'\u200e",
+      "gold": "share",
+      "predicted": "share"
+    },
+    {
+      "text": "When do you think the \u201cbig\u201d 6 will organize a boycott of our games\nIn our current form we seem to be miles above the league and we already beat mid tier and relegation fighter teams like man united and Liverpool. My question is when do you think they\u2019ll see us as too much and poised to win the league so they\u2019ll do anything to stop us. I predict it\u2019ll be if we keep winning games and after our game against Arsenal and we win. That\u2019s when they\u2019ll try to organize it and frame it as trying to \u201csave\u201d the integrity of the league. Yes the photos are relevant.",
+      "gold": "opinion",
+      "predicted": "question"
+    },
+    {
+      "text": "Got a 25/26 Jersey today. Solidarity \u270a.\nFirst post. Please be nice. \u200b\u200b",
+      "gold": "vent",
+      "predicted": "question"
+    },
+    {
+      "text": "Which jersey do you like the most?\nFor me its the 25/26 away kit, if you know you know",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "93:20 Podcast - 09 Oct: Ahsan's rant: \"Fight till the end, circle the wagons!\"",
+      "gold": "share",
+      "predicted": "vent"
+    },
+    {
+      "text": "The Omar Berrada Problem\nWhy is nobody talking about Omar Berrada\u2019s role at City during the period of the financial breaches? \n Do any blues here find it strange how little attention has been paid to Omar Berrada, particularly now that he\u2019s Manchester United\u2019s CEO?\n Berrada joined City in 2011 and held several senior commercial positions throughout the period in question, including Director of Partnership Sales, Group Commercial Director and eventually COO. \n I\u2019m not suggesting Berrada was personally involved in wrongdoing. But considering his responsibilities, why does there seem to be so little interest in examining his role?\n The media has spent years scrutinising City\u2019s ownership, executives and financial practices, yet one of the club\u2019s former senior commercial figures is now running Manchester United with comparatively little discussion about his time at City.\n Would the scrutiny be different if he were still employed by City?\n Lastly, if United were to pursue compensation or argue that City\u2019s financial breaches deprived them of sporting success, wouldn\u2019t it be reasonable to ask what due diligence they conducted before appointing someone who held senior commercial responsibilities at City during that period?",
+      "gold": "opinion",
+      "predicted": "question"
+    },
+    {
+      "text": "Still on track to run the table this year\nNeed to really give rivals something to boo about \ud83d\ude02",
+      "gold": "vent",
+      "predicted": "opinion"
+    },
+    {
+      "text": "0-2 Doku 68\u2019",
+      "gold": "share",
+      "predicted": "share"
+    },
+    {
+      "text": "TV\u2019s Natalie Pike: I turned detective to catch my stalker\n\u201cLong before Manchester City became a club besieged, Natalie Pike established herself as a face of its watershed moments, hosting the club\u2019s homecoming parade from Istanbul after winning the Treble and conducting a poignant last interview with Pep Guardiola as he signed off his decade in charge. The Etihad Stadium was so comfortingly familiar that it became her sanctuary. That was until February 21 this year, when, in the midst of presenting pitchside during City\u2019s 2-1 win over Newcastle, she grew conscious of a man hovering uncomfortably close to the barriers, intent on spooking her. \u201cI just had a sense that something wasn\u2019t right,\u201d she says. \u201cSo I looked over my shoulder, and I instantly saw him \u2013 the man from the picture.\u201d\n This picture was one she had excavated from Instagram, in a burst of panic about a traumatic episode eight days earlier. On that occasion, Pike, emerging from a restful spa day with a friend, had turned on her telephone to see a spate of missed calls from her hairdresser and the school attended by her eight-year-old son, Reggie. Two men, it turned out, had pulled up outside the salon in a van, telling staff that they knew Pike was a customer and demanding to know where she lived. The hairdresser alerted the school, conscious that it was on the same village road. \u201cMy friend said that I just went white,\u201d she reflects. \u201cI had no idea what it could mean. So I did what we tend to do as women, and I started investigating myself.\u201d\n As a former model and now a versatile football presenter across BBC Sport, TNT Sports and CBS in the United States, the 43-year-old has built a substantial online presence. And when she trawled through previously hidden Instagram messages from people she did not follow, she noticed a high number across 18 months from one particular account. \u201cThey began in the usual way: \u2018Happy birthday\u2019, \u2018You\u2019re beautiful\u2019, that kind of thing. Then they started deteriorating. So I took a screenshot of this person\u2019s profile, sent it to my hairdresser, and she instantly confirmed it was the same man she had seen.\u201d It would also be the same man who so unsettled her at City, although by the time she had a clear view he was bounding up the stairs to the concourse, desperate to avoid detection.\n Despite her increased prominence on television, Pike had never entertained the idea she could be the victim of stalking. She had also never intended to discuss the ordeal openly. \u201cWhenever I\u2019m on screen, you\u2019ll see me very bubbly, smiley, happy,\u201d she says. \u201cBut I\u2019m also a very private person. My family and friends have encouraged me to do this, because I almost don\u2019t want to admit that these things are real.\u201d \n Amid her maelstrom of emotions at the Etihad, she faced the same conundrum. Was there a possibility of mistaken identity? After the scare at the salon, she had contacted police, who duly tracked down the man she had discovered on social media and warned him to stay away from her. Or did she trust her instincts and decide that it was the same tormentor?\n \u201cI ran up to the public address announcer\u2019s room, and I had my first experience of a panic attack,\u201d she says. \u201cI stood in a corner, burst out crying, and I just couldn\u2019t catch my breath. Police took it seriously, and through the stadium CCTV they were able to pinpoint him. There was a moment when they traced his steps coming into the ground, and it was harrowing to watch. He never took his eyes off me. He came in at the back of the stand and then, over a 20-minute period, moved down and stopped several times until he was about a metre away from me.\u201d\n From there, the response was unusually swift by the standards of stalking cases. In the UK, only about six per cent of recorded offences end in a suspect being charged, while under two per cent ever result in a criminal conviction. Although Pike finds such figures \u201cfrightening\u201d, she considers herself amongst the fortunate few. \u201cThat\u2019s one of the reasons I wanted to speak out about this,\u201d she explains. \u201cThe police immediately took it seriously. They arrested the guy the morning after the match, they came to my house to take my full statement, and they just went full steam ahead from there. I later found out that he had been messaging my best friend, her husband, plus other people I know. When police went through his devices, they found pictures of him sitting in the pub around the corner from my house. There were even photographs of my ex-husband\u2019s car.\u201d\n It is not the first stalking ordeal suffered by a high-profile female sports presenter in this country. Last year Laura Woods described to Telegraph Sport how she had been bombarded for three years by an obsessed female Liverpool fan, who would send her birthday cards that read: \u201cToday\u2019s the day you were born and tonight\u2019s the night you\u2019re going to die.\u201d The woman was later jailed for 14 months. \n For all that Pike has hesitated about sharing her own experience, she wants to lay bare the fear and isolation that stalkers can cause their victims. \u201cIn my head, I was minimising this as a way of trying to protect myself,\u201d she says. \u201cBut we shouldn\u2019t minimise these things. You have to make sure that people know this behaviour isn\u2019t OK.\u201d\n Although the realisation her stalker had been caught proved cathartic, his subsequent release on bail \u2013 with strict conditions not to go near her \u2013 coincided with perhaps the worst day of her life. \u201cI asked my parents to come around so that I could fill them in on everything that was happening,\u201d she recalls. \u201cMy mum has stage-four bowel cancer. And as I told her about the stalking, she collapsed. I scrambled an ambulance, and she ended up in hospital for five weeks. The stalking came on top of an incredibly difficult year for my family, magnifying the pressure and anxiety.\u201d\n It came as a tonic that she soon obtained a stalking protection order against the man, which prohibited him from visiting her village, approaching any of her relatives or friends, or attending the Etihad. Manchester City took the extra precaution of banning him in any case. In the months that followed, Pike did everything she could to make herself difficult to trace, changing her car number plate, avoiding the local shops, and varying her routes home. She also derived support from the Suzy Lamplugh Trust, the UK\u2019s leading authority on stalking and one that provides a national helpline.\n \u201cOne of the sad things about this is that it has really affected my enjoyment of going to the Etihad,\u201d she says. \u201cI\u2019m a lifelong Manchester City fan, and it would always be my place of safety. I was there throughout my divorce, the pandemic, all the awful things that happen in life, and I could still be happy there. I feel like that has been taken away from me.\u201d\n Her route into football broadcasting was, to put it mildly, unorthodox. In the early 2000s, Pike initially gained recognition at the peak of the lads\u2019 mags era, winning FHM\u2019s award as \u201cHigh Street Honey of the Year\u201d. It is a period that seems as though it belongs in a time capsule, especially given the recent testimony of Natalie Imbruglia, the Australian pop star, that she felt \u201cexploited\u201d and \u201ctraumatised\u201d by a photoshoot for one such magazine. Pike, by contrast, insists that she felt no discomfort. \u201cI very much look back on it with affection. Now and again, somebody will bring it up as a form of \u2018gotcha\u2019, but I\u2019m not ashamed of it. I\u2019m proud of it and it has brought me to where I am today.\n \u201cWould I make those decisions now, as a 43-year-old mother? No, I wouldn\u2019t. But I was 21. And I\u2019m not going to allow anybody to make me feel shame for anything I\u2019ve done in my career, then or now. That\u2019s another reason why I want to tell my story, because it\u2019s about showing that women are strong, that we won\u2019t be stopped or discouraged.\u201d\n It would be another decade before she cultivated her first opportunities in sport. \u201cMy only regret,\u201d she says, \u201cis that I didn\u2019t have the self-belief to do it 20 years ago.\u201d Having modelled the Manchester City kit for the 2008-09 campaign, the first of the Abu Dhabi-controlled era, she was eventually entrusted with being the club\u2019s main in-house presenter, interviewing everybody from Guardiola to Liam Gallagher. She has covered every twist of the past 15 years\u2019 transformation, now the subject of the fiercest scrutiny after the Premier League\u2019s verdict last week that it was all achieved through artificially inflated commercial revenue. City employees are restricted from speaking about the case until the appeal is complete.\n Expanding her platform beyond City, Pike, who was born in Edinburgh, took a lead in broadcasting Scotland\u2019s extraordinary takeover of Boston at this year\u2019s World Cup. \u201cI really needed this,\u201d she said at the time, even if nobody knew the full reasons why it meant so much to her.\n Pike becomes tearful as she reflects on her Massachusetts summer, which provided a precious escape from the state of hyper-vigilance her stalker had forced her to adopt. \u201cIt makes me emotional thinking about it, because it came at the perfect time, and it was such a release from everything else that was happening,\u201d she says. \u201cIt helps restore faith in human nature, I guess.\u201d\n In a Manchester courtroom last Friday, she was finally able to close the book on an anguished episode, as the man who had hounded her received a 12-month prison sentence, suspended for 18 months. She had the option of asking for a screen to separate herself from the stalker, she declined, choosing instead to deliver her victim impact statement directly to him. \u201cI did that as a means of taking back power in that situation,\u201d she says. \u201cI thought, \u2018I don\u2019t need to hide. I\u2019ve got nothing to hide about\u2019. Seeing him sentenced, and hearing the judge emphasise the seriousness of the case, I felt strong. And I felt an overwhelming relief that I could now get on with my life.\u201d\n What happened to her has changed her profoundly, casting a shadow that has taken the best part of a year to lift. But she trusts that by telling people, she might help illuminate stalking\u2019s true toll and the human scars that can lie beneath even the most ebullient personas on screen.\u201d",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Manchester City keep entertaining. Maresca is learning to love the chaos\nEnzo Maresca summed up his feelings about Manchester City\u2019s chaotic 5-3 victory over Sunderland in a way that many might expect. \u201cTo be honest, I prefer to win 1-0 than 5-3,\u201d he smiled.\n Maresca arrived with a reputation for slow, methodical football. He threatened to walk out on Leicester City after fans groaned at his possession-based approach, despite his side being top of the Championship by 10 points in January 2024 \u2014 and many took Chelsea player Cole Palmer\u2019s recent reference to \u2018safe zones\u2019 as an attack on the Italian\u2019s preference for structure.\n Even sources close to City\u2019s first team in recent years, familiar with Maresca\u2019s style of play as an opposition manager, believed he was more suited to the City side that won the treble in 2022-23, rather than the more dynamic squad of players that they have assembled since.\n And while there is plenty for City to improve upon, having been given the runaround by Brian Brobbey and almost conceding a comedy own goal that would have made it 4-4 on Sunday, Maresca\u2019s City side are looking like entertainers at this early stage \u2014 and that could be the theme of their season.",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "17yo Dexter Oliver has made a sensational start to the season for the U18",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Transferring Season Ticket\nHello, looking for some advice as the website really isn\u2019t clear. My dad passed away in May, he bought the same 3 season tickets every year in his name, my name and my mums name. My half brother (not my dad\u2019s son) used my mums season tickets every year as she never used it after I was born. We\u2019ve had the same seats since the Etihad was built. We panicked after dad died because we desperately didn\u2019t want to lose the seats so logged into his account and renewed all 3 tickets in his name (as if he was still alive), it would absolutely break our hearts if we lost his seat and there was no clear statement on what would happen to the seat if we were to declare he was no longer with us. \n My brother has now decided he wants to own up mid season and transfer dad\u2019s season ticket into his name. I have multiple problems with this but the main one is, I strongly feel like city will just take the ticket away. My brother doesn\u2019t even have the same surname as my dad so \u2018transferring it\u2019 to family could be tricky. City could also be like you\u2019ve committed fraud you\u2019re not having the ticket. I feel like at the end of the season they\u2019d maybe be more likely to listen and understand our position but mid season feels risky. My brother also plans to buy a champions league away ticket using dad\u2019s ticket (he had a ridiculous amount of points).\n Anyways I\u2019m rambling, has anyone been in this position and would like to share what happened to them? Thank you in advance. X",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "Semenyo is nominated for Player of the Matchweek 5!",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Andy Burnham, UK Prime Minister: \"really concerned\" if Manchester City's owners decide to sell up & \"I do actually thank the City Football Group and the wider ownership for the money that they didn't just put into the Etihad [Stadium] and the campus around it but also into the city\" [BBC News]\nAndy Burnham has said he would be \"really concerned\" if Manchester City's owners decide to sell up after the club was found guilty of Premier League financial rule breaches.\n The prime minister said the situation was \"contested by Manchester City\" and he praised the club's owners since 2008 - led by Sheikh Mansour, United Arab Emirates deputy prime minister and royal family member - for investing in Manchester.\n An independent commission found the club guilty of the majority of the 115 charges they faced, a verdict that City are expected to appeal.\n The club continue to deny any wrongdoing and have until 2 October to submit an appeal.\n It comes as the Independent Football Regulator \u2013 set up by the government in 2025 \u2013 said the case had raised \"serious issues\".\n The regulator suggested it would be exploring options \u2013 including whether to strip the owners of their licence to own the club \u2013 once the disciplinary process was completed.\n Among the independent panel's findings were that City arranged \"sham contracts\" with a number of commercial partners as part of a scheme to disguise secret funding of more than \u00a3830m.\n The Premier League said City \"systematically broke Premier League Rules for nearly a decade\".\n The independent panel will hold a sanctions hearing \u2013 which could take months to convene \u2013 to decide the punishment. City can appeal both the guilty verdicts and the sanction, leaving City and the league in a state of chaos and uncertainty.\n The punishment could range from a huge fine, being deducted points or ejected from the Premier League, to being stripped of the eight trophies they had won in the affected period.\n Some fans and pundits have questioned how the club's owners can carry on if they deliberately breached rules over the course of nine years.\n Asked by the BBC's political editor Chris Mason if he was concerned that Manchester City's owners would now sell the club, Burham said on Wednesday: \"I would be really concerned to lose them.\n \"They've been such a huge partner in the building of modern Manchester and obviously the building of Manchester City into the global force that it is.\"\n Burnham, the mayor of Greater Manchester until June, added: \"I do actually thank the City Football Group and the wider ownership for the money that they didn't just put into the Etihad [Stadium] and the campus around it but also into the city\".\n He said he was \"of course\" confident that his own interactions with City's owners when he was mayor would stand up to scrutiny.\n Burnham made his comments amid widespread shock in football about the scale of the independent commission's findings \u2013 and the strength of Premier League comments about City's actions.\n Burnham was speaking to the BBC from Hill Dickinson Stadium, the home of Everton, the team he supports.\n Everton had their own run in with Premier League financial rules when they were charged and deducted 10 points for more minor breaches in November 2023, reduced to six on appeal.\n Burnham said: \"Everton was in this position a few years ago and you might remember that I fought for Everton in that situation because I still hold the view very firmly that they weren't fairly treated in that process.\"\n Drawing a comparison between that and City's current predicament, he added: \"I remember people proclaiming Everton guilty at the time and with hindsight I think more people would say that wasn't fair, the way that was handled.\n \"So it would be wrong of me to leap to one side given the experience that I'd had before becoming prime minister.\"\n It is \"frustrating when people rush to judgement\", Burnham said.\n He accepted there was \"a lot at stake\" for City fans, the club and Manchester itself.\n But he added it would be wrong for him to intervene.\n City have said in a statement they are \"both disappointed and surprised by the opinion of the Premier League Commission\" and maintained their innocence of all the accusations made.",
+      "gold": "share",
+      "predicted": "vent"
+    },
+    {
+      "text": "What\u2019s the BEST Manchester City shirt of all time\nCity have had some incredible kits over the years, from the classic old-school designs to the modern-era shirts. But which one stands above the rest?\n Whether it\u2019s a home, away or third kit from any season, I want to hear your opinions!",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "Our Ownership - Consensus\nWhat are we all thinking? At this point its seems pretty clear that the writing is on the wall and the owners are clutching at whatever shreds of straws they have left. \n I find it quite frankly ridiculous that they were brazen and naive enough to think that this whole thing wouldn't have ever blown up in their face \n Pretty ridiculous situation us fans now find ourselves in. We're getting abuse left and right and the club's entire reputation is in tatters at this moment in time.\n I don't particularly care about the likes of Chelsea, Arsenal, United and Liverpool as them boys are trying to run a closed shop and all the bitterness from them and their fans is simply because someone has come along and spoiled their party.\n That said its very conflicting to know that our success of the last 10+ years has been built on lies and something that isnt. I'm annoyed at the owners - we as fans are the ones who are now gonna bear the brunt of this. \n A dark day this. We're not going anywhere though, no matter where we end up our core fanbase will be behind us. CTID.",
+      "gold": "opinion",
+      "predicted": "question"
+    },
+    {
+      "text": "Club Statement: \u201cManchester City FC is both disappointed and surprised by the opinion of the Premier League Commission, that has been published today.\u201d",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "We\u2019ve got (clap clap) Guardiola\u2026at NYCFC vs RBNY Hudson River Derby tonight!\nPep met with the players and lit the smokestacks before the game.\n Proud to be a Blue x 2!",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Pep Guardiola\u2019s Manchester City return did not go to plan, but he made his point\nPep Guardiola slipped into the Etihad Stadium last night with no fanfare.\n He arrived 40 minutes before kick-off against PSG, with no announcement to fans and sat high in the stands clad in a flat cap.\n His return did not go entirely to plan as Manchester City lost 4-2 - but his presence made its own statement.\n This was Guardiola wanting to show support for his old bosses and players at a time of crisis for the club. In that sense, it was mission accomplished.",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Two lifelong Man City fans scored a hat-trick EACH against Manchester United, four years ago today. \ud83c\udfa9 (Phil Foden x Erling Haaland)",
+      "gold": "share",
+      "predicted": "share"
+    },
+    {
+      "text": "Confused but optimistic\nWe need confirmation and clarity man....on the punishments and measures to be taken.we are suffering due to the faults of the owners.I am constantly checking pages for updates....hoping the sanctions are huge fines and transfer bans and reasonable points deduction but these rival fans talking about stripping titles and our players going away is genuinely frustrating.Hope the announcements will be done soon.I know the treatment that our club is gonna give to other clubs once we get through this will be worth it with rejections of their bids for our players and what not ! I'm optimistic about rival fans being pissed off about sanctions and us winning matches.CTID",
+      "gold": "vent",
+      "predicted": "question"
+    },
+    {
+      "text": "Why would anyone fiddle the books before PSR?\nCan anyone explain to me the motivation behind fiddling the books, assuming that's what's gone on, before PSR (Premier League Financial Fair Play) started in 2013? (There are seemingly charges relating to the 5 seasons before this)",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "INSIDE CITY 529 | Manchester is Blue!",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "[Highlight] Semenyo with a quality goal in 43rd min. ManCity [3]-2 Sunderland",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Don\u2019t get me wrong. Elliot was immense in the game, but this man got robbed not getting MOTM. Literally involved in every single goal and the red card. Best winger on the planet atm hands down.",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Matheus Nunes Appreciation Post\nHonestly, how good has Nunes been since coming over from Wolves? He\u2019s definitely had his fair share of mistakes and rough patches, but he\u2019s really grown into that RB role. He\u2019s been solid defensively and offers so much going forward, especially when he moves into midfield in possession, opening up our wide attack. I feel like whenever he\u2019s not playing, the whole team struggles, not just defensively but also when transitioning into attack. He\u2019s become such an important part of how we play, and I really don\u2019t think he gets nearly enough credit for it. Pep wasn\u2019t joking when he said he\u2019s one of the best midfielders in the world lol \ud83e\udd23",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Manchester City and the Champions League? It\u2019s complicated\nManchester City have a complicated relationship with the Champions League. \n They were banned from it in 2020, reinstated later that year and then won it in 2023. \n There is no love lost between the club, its fans and UEFA, yet the money and prestige is valuable to City. \n Sam Lee analyses how important the competition is to them \u2014 and how they would be impacted if sanctions mean qualification is impossible in future seasons.",
+      "gold": "share",
+      "predicted": "question"
+    },
+    {
+      "text": "Looking for Magnet\nHey, I\u2019m curious if anyone could potentially get an extra magnetic schedule and mail it to me? If that\u2019s happens to be something that\u2019s done there? Or any magnet really. I\u2019m a huge fan, from South Dakota but now in Minneapolis. I\u2019d be willing to pay for it and pay for shipping if needed! Just moved into my first place and I need some decor on my fridge. Please, and thank you in advance. Yaya is my favorite all-time with KDB being a close second.",
+      "gold": "question",
+      "predicted": "question"
+    },
+    {
+      "text": "My cat approves\nMy cat's enjoying the footy tonight. Youngsters doing well!",
+      "gold": "vent",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Manchester City [3] - 1 Ipswich - E. Haaland 69'",
+      "gold": "share",
+      "predicted": "share"
+    },
+    {
+      "text": "Unmasking the 900 million figure reported by the premier league\nI compiled all the financial statements reported by manchester city in the period of financial breach. \n According to the estimates the 900 million figure is basically the entirety of funding from AbuDhabi investment corporation. (Includes the Emirates deal, abu dhabi tourism, Etisalat and Aabar investment).\n The independent panel has decided that all this money is a sham which inflated the clubs valuation beyond what they consider to be fair.\n The club still holds its position because they believe it's just the way of doing business where owners make other related companies invest in them.\n However, The leaked mail mentioned that some deals where just on paper without money moving anywhere just to keep the revenues high. (The amount of such deals if true is unknown)\n Anyways the point being the 900 million is literally the entirety of funds our club received from Abu Dhabi just so you know what that number means.\n P S. Yes I used ai to compile that infographic.",
+      "gold": "share",
+      "predicted": "question"
+    },
+    {
+      "text": "[Financial Times] Manchester City: too big to fail?",
+      "gold": "share",
+      "predicted": "question"
+    },
+    {
+      "text": "[Match Thread] Man City vs Ipswich Town (Premier League)\nThis post contains content not supported on old Reddit. Click here to view the full post",
+      "gold": "share",
+      "predicted": "share"
+    },
+    {
+      "text": "Foden's red card needs to be rescinded\nThe receipts just keep coming",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Sergio Aguero stealing memories off Manchester United",
+      "gold": "vent",
+      "predicted": "opinion"
+    },
+    {
+      "text": "[Will Unwin] Manchester City fans are right to feel angry \u2013 now they need to direct it at the owners\n\"City need to reflect their history and values by finding people with football expertise who can navigate a tumultuous period and lead them forward with the best interests of the club and wider community at heart. Should the worst available punishments be meted out, the owners can leave, staff can find new jobs and the players will not be short of offers, but the fans will be left behind. As at Bury, Macclesfield and others down the pyramid, the supporters pay the heaviest price. City\u2019s followers would do well not to blindly back the owners now\"\n For context Unwin is a blue. Good mates with David Mooney of Blue Moon and Let Me Talk podcasts. And I'm with him on this one. If we lose the verdict or even if we win the verdict on a technicality, the owners need to move on\n They've transformed the club, but so long as they're around, supporters will have this cloud hanging over them. Thanks for the new stadium parts and the academy complex and the memories and all that but please take your profits and go do something else.",
+      "gold": "share",
+      "predicted": "vent"
+    },
+    {
+      "text": "Enzo Maresca: \"I made a mistake in the midfield selection with Rayan, Enzo and Elliot. in these type of game you need to be strong esp in the middle because they're very good. In the future, Bouaddi, Enzo and Elliot can be a solution.\"",
+      "gold": "share",
+      "predicted": "opinion"
+    },
+    {
+      "text": "Rival fans in the Premier League sub want us permanently banned from the top-flight of English football forever because our owner invested money into the club to break the status quo",
+      "gold": "opinion",
+      "predicted": "opinion"
+    },
+    {
+      "text": "The critisim City players get when playing for England is shocking.\nGuehi had a bad game, not talking about him. O'Reilly literally created the second england out of thin air, yet everyone is blaming him there and saying he shouldn't start?? Even Anderson who played wonderfully and created the first England goal had almost zero praise anywhere in the sub.\n It's like if you play well but make mistakes like O'Reilly you're automatically not good enough, and when you play good like Anderson they do not praise you. This is the best you can aim for as a City player",
+      "gold": "opinion",
+      "predicted": "opinion"
+    }
+  ]
+}
