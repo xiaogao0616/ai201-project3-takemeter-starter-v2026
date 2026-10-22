@@ -246,6 +246,7 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+I predict my trained model will lose on all four features, because it only learns to label share and ignores the remaining three labels, which will enlarge the gap between the real percentage and the predicted percentage for all four labels.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
