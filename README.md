@@ -267,22 +267,36 @@ I predict my trained model will lose on all four features, because it only learn
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy |  | 0.550 | 0.550 | 0.550 |  |
+| 2. Macro F1 |  | 0.177 | 0.177 | 0.177 |  |
+| 3. F1 — `question` |  | 0.000 | 0.000 | 0.000 |  |
+| 4. F1 — `opinion` / `vent` |  | 0.000 / 0.000 | 0.000 / 0.000 | 0.000 / 0.000 |  |
+| 5. Agreement with a second labeler |  | — | — | — |  |
+
+Device: **cpu** (torch 2.14.1+cpu), all three seeds. Full numbers in `results_three_seeds_before.json`.
+
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.550 | 0.550 | 0.550 | 0.000 |
+| Macro F1 | 0.177 | 0.177 | 0.177 | 0.000 |
+| F1 — `share` | 0.710 | 0.710 | 0.710 | 0.000 |
+| F1 — `question` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `vent` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `opinion` | 0.000 | 0.000 | 0.000 | 0.000 |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+Seed 42 (seeds 7 and 2024 are identical):
+
+| true \ predicted | share | question | vent | opinion |
+|---|---|---|---|---|
+| **share** | 22 | 0 | 0 | 0 |
+| **question** | 5 | 0 | 0 | 0 |
+| **vent** | 5 | 0 | 0 | 0 |
+| **opinion** | 8 | 0 | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
