@@ -410,11 +410,11 @@ Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1. Overall accuracy | 0.75 | 0.825 | 0.775 | 0.650 |  |
-| 2. Macro F1 | 0.65 | 0.623 | 0.541 | 0.502 |  |
-| 3. F1 — `question` | 0.60 | 0.800 | 0.500 | 0.222 |  |
-| 4. F1 — `opinion` / `vent` | 0.60 / 0.50 | 0.737 / 0.000 | 0.706 / 0.000 | 0.250 / 0.667 |  |
-| 5. Agreement with a second labeler | 80% | — | — | — |  |
+| 1. Overall accuracy | 0.75 | 0.825 | 0.775 | 0.650 | MISSED |
+| 2. Macro F1 | 0.65 | 0.623 | 0.541 | 0.502 | MISSED |
+| 3. F1 — `question` | 0.60 | 0.800 | 0.500 | 0.222 | MISSED |
+| 4. F1 — `opinion` / `vent` | 0.60 / 0.50 | 0.737 / 0.000 | 0.706 / 0.000 | 0.250 / 0.667 | MISSED |
+| 5. Agreement with a second labeler | 80% | — | — | — | NOT TESTED YET |
 
 | Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
 |---|---|---|---|---|
@@ -435,6 +435,10 @@ Confusion matrix after the change, seed 42:
 | **opinion** | 0 | 1 | 0 | 7 |
 
 **Did it help, and how do I know:**
+
+Yes, it helped, but not enough to hit any criterion. Before, the model called every post share on all three seeds, so accuracy was 0.550, macro F1 was 0.177, and question, vent, and opinion all had an F1 of 0. Once I bumped training from 3 to 10 epochs, it actually started telling the labels apart. Macro F1 went up to 0.623, 0.541, and 0.502, and question and opinion now get real F1 scores on every seed. So I was right that the first run just didn't train long enough.
+
+The problem now is that the results jump around a lot from seed to seed. Accuracy goes anywhere from 0.650 to 0.825, a 17.5-point spread, and vent gets 0 on two seeds but 0.667 on the third. Each test split only has 5 vent and 5 question posts, so getting one or two more right or wrong swings the score a lot. That means the second problem I pointed out, not having enough examples, is now the main thing holding the numbers back.
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
