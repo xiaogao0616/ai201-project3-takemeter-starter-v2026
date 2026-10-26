@@ -313,11 +313,11 @@ Seed 42 (seeds 7 and 2024 are identical):
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.75 | MISSED | 0.550 on all three seeds, below 0.75 every time |
+| 2 | Macro F1 | ≥ 0.65 | MISSED | 0.177 on all three seeds, below 0.65 every time |
+| 3 | F1 — `question` | ≥ 0.60 | MISSED | 0.000 on all three seeds; the model never predicted `question` |
+| 4 | F1 — `opinion` / `vent` | ≥ 0.60 / ≥ 0.50 | MISSED | 0.000 / 0.000 on all three seeds; the model never predicted either label |
+| 5 | Agreement with a second labeler | ≥ 80% | NOT TESTED YET | No second person has labeled the 40-post sample yet, so there is no rate to compare |
 
 **Diagnoses**
 
@@ -329,6 +329,18 @@ Seed 42 (seeds 7 and 2024 are identical):
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+Criteria 1–4 (all missed): it's really one problem. The model just guessed the most common label every time.
+
+On all three seeds it called every one of the 40 test posts share. So accuracy is just how much of the test set is share (22/40 = 0.550), and every other label got an F1 of 0. All 8 opinion, 5 vent, and 5 question posts got called share, and it never made a mistake in the other direction.
+
+I think the main reason is that it didn't train long enough. Training only ran 3 epochs, which is about 36 steps on 186 posts, and both training loss (about 1.34 to 1.09) and validation loss were still going down when it stopped. If my labels were messy on one boundary, I'd expect the model to mix up those two labels, not give up on three at once. Also, the zero-shot baseline got 0.556 F1 on question without any training, so you can clearly tell question posts apart just from the text.
+
+A second reason is that there aren't many examples. question and vent each have only 5 posts in the test set and 31–37 in the whole file, so even a model that worked would get pretty jumpy scores on them.
+
+What I can't rule out: I never got the staff labels, so I don't have an agreement report and can't fully tell a labeling problem apart from a model problem. My 30 labels on the staff set are in my_staff_labels.csv.
+
+Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
 
 
 
