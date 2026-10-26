@@ -402,19 +402,37 @@ Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** One training setting: `EPOCHS` from 3 to 10. Learning rate (2e-5), batch size (16), max length (128), the data and the three seeds (42, 7, 2024) are all unchanged. Run with `RUN_LABEL = "after"`; full numbers in `results_three_seeds_after.json`. Device: **cpu**.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** The "didn't train long enough" diagnosis above: in the before run, training and validation loss were both still falling when training stopped after 3 epochs (about 36 steps), and the model had only learned to guess `share`.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | 0.75 | 0.825 | 0.775 | 0.650 |  |
+| 2. Macro F1 | 0.65 | 0.623 | 0.541 | 0.502 |  |
+| 3. F1 — `question` | 0.60 | 0.800 | 0.500 | 0.222 |  |
+| 4. F1 — `opinion` / `vent` | 0.60 / 0.50 | 0.737 / 0.000 | 0.706 / 0.000 | 0.250 / 0.667 |  |
+| 5. Agreement with a second labeler | 80% | — | — | — |  |
+
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.825 | 0.775 | 0.650 | 0.175 |
+| Macro F1 | 0.623 | 0.541 | 0.502 | 0.121 |
+| F1 — `share` | 0.957 | 0.957 | 0.870 | 0.087 |
+| F1 — `question` | 0.800 | 0.500 | 0.222 | 0.578 |
+| F1 — `vent` | 0.000 | 0.000 | 0.667 | 0.667 |
+| F1 — `opinion` | 0.737 | 0.706 | 0.250 | 0.487 |
+
+Confusion matrix after the change, seed 42:
+
+| true \ predicted | share | question | vent | opinion |
+|---|---|---|---|---|
+| **share** | 22 | 0 | 0 | 0 |
+| **question** | 0 | 4 | 0 | 1 |
+| **vent** | 2 | 0 | 0 | 3 |
+| **opinion** | 0 | 1 | 0 | 7 |
 
 **Did it help, and how do I know:**
 
