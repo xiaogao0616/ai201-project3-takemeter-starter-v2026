@@ -354,7 +354,7 @@ Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** not computed. I did not receive `data/staff_labels.csv` from my TF, so there was nothing to compare against and `agreement.py` could not produce `agreement_results.json`. My 30 labels, made under the staff taxonomy before seeing any staff answers, are in `my_staff_labels.csv` (committed in f91513a).
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -376,25 +376,7 @@ Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**What the pattern in my disagreements tells me:**
+No disagreements to adjudicate, because there were no staff labels to compare against.
 
 
 
@@ -451,11 +433,17 @@ The problem now is that the results jump around a lot from seed to seed. Accurac
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+Criteria 1–4 are still missed, and the after-run points at the same fix for all of them: more examples of the small labels. vent and question have only 31 and 37 posts, so each test split gets just 5 of each, and one or two posts decide whether a seed passes. Next I would collect about 30 more vent and 30 more question posts, labeled with the same rules, and re-run the three seeds. vent also needs a look at my opinion vs vent boundary, because 3 real vent posts were called opinion on seed 42 and none went the other way. I stopped here because the unit asks for one change per run, and I ran out of time to collect and label new posts.
+
+Criterion 5 is still not tested: I would need a classmate to label the 40-post sample, which I didn't get to this unit.
+
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+
+I meant vent to capture posts that are pure emotion with no arguable claim, but the model seems to treat any emotional, opinionated-sounding post as opinion: on seed 42, 3 of the 5 real vent posts were called opinion and no opinion post was called vent. It learned share well (F1 0.957 on two seeds) because share posts look different on the surface (scores, stats, news headlines), but the opinion vs vent line depends on whether there's an arguable claim, which is exactly the boundary I found hardest myself.
 
 
 
