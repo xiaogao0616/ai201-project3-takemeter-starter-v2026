@@ -222,6 +222,14 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 - *What came back:* It said criteria 1–4 were clear enough. Criterion 5, the one about agreeing with a second labeler, had three gaps. It didn't say how the 20 hard posts would be chosen out of the 49, whether cold rows could be included, or which rules the second person would follow.
 - *What I changed:* I rewrote criterion 5 myself. The 20 posts are now picked at random with seed 42 from rows whose note contains "hard:", cold rows can be included, and the second labeler only gets the definitions in my README, not my labels or notes. I kept the 80% target.
 
+**Moment 3 (unit 6)**
+
+- *What I asked for:* After the three-seed run, I asked Claude why the model was calling every post share and what evidence I had for the cause.
+- *What came back:* It pointed out that training loss and validation loss were both still falling when training stopped (about 1.34 to 1.09 over only ~36 steps), that a labeling problem would usually show up as two specific labels getting mixed up rather than three labels at 0, and that the zero-shot baseline already got 0.556 F1 on question. It also warned me that the notebook's message "a direction like that usually points at your labelling" was misleading here, and that the "stable" zero spread only meant the model guessed the same thing every time. It suggested changing only the number of epochs as my one improvement.
+- *What I changed:* I rewrote the diagnosis in my own words and kept the part saying I can't rule out a labeling problem, because I never got the staff labels for an agreement report. I went with changing only `EPOCHS` (3 to 10), since that was what my diagnosis pointed at, and kept the learning rate, data and seeds the same so the before and after runs are comparable. When the after-run passed accuracy on two seeds but not the third, I still called it MISSED, because the target has to hold on all three.
+
+**What Claude did for me in unit 6:** it ran the baseline, the three-seed training runs and the notebook cells, and filled the number tables and confusion matrices into this README from the notebook output. I wrote my prediction before seeing the comparison table, labeled the 30 staff posts myself, and wrote the diagnosis and "did it help" paragraphs from Claude's drafts in my own words.
+
 **Pre-labelling disclosure:** AI pre-labeled the batch and I reviewed and corrected every row; the first 20 rows were labeled cold (by hand, before seeing any AI labels).
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
