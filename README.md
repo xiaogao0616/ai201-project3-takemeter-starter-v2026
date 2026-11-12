@@ -18,22 +18,8 @@
 >
 > Nothing to upload, nothing to connect, no accounts and no keys. The notebook
 > runs on your machine and writes next to your code.
->
-> **The rest of this file is your submission.** Fill it in as you go.
 
 ---
-
-<!-- ─────────────────────────────────────────────────────────────────────────
-     HOW TO USE THIS FILE
-
-     Unit 5 asks for the first five sections. Unit 6 adds the five below them.
-
-     Everything is pasted as TEXT. No screenshots, no images.
-
-     ⚠️ The confusion matrix especially. The notebook prints one as a markdown
-     table, ready to copy. A screenshot of a matrix earns nothing. Paste the
-     table.
-     ───────────────────────────────────────────────────────────────────────── -->
 
 <!-- ═══════════════════════ UNIT 5 — THE BUILD ═══════════════════════ -->
 
@@ -48,17 +34,9 @@ My community is r/MCFC (https://www.reddit.com/r/MCFC/). I chose it because I am
 
 Note: many posts in this community rely on images. Since the model only sees text, I will skip posts that cannot be understood without the image.
 
-
-
 ---
 
 ## Label Taxonomy
-
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
-
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
 ### `share`
 
@@ -74,7 +52,6 @@ Note: many posts in this community rely on images. Since the model only sees tex
 
 **Definition:** Genuinely asks the community for information or their views.
 
-
 **Example 1:**
 >Which jersey do you like the most?
 
@@ -85,7 +62,6 @@ Note: many posts in this community rely on images. Since the model only sees tex
 
 **Definition:** Mainly expresses emotion (anger, joy, frustration) without a claim others could argue with.
 
-
 **Example 1:**
 >Banana nanananaaa nanananaaa Cityyyy!!!
 
@@ -95,7 +71,6 @@ Note: many posts in this community rely on images. Since the model only sees tex
 ### `opinion`
 
 **Definition:** Makes a clear judgment or recommendation about a player, the manager, or the club.
-
 
 **Example 1:**
 >Don’t get me wrong. Elliot was immense in the game, but this man got robbed not getting MOTM. Literally involved in every single goal and the red card. Best winger on the planet atm hands down.
@@ -119,14 +94,9 @@ Related rules for the other boundaries:
 - `question` vs `opinion`: A question only counts as `question` if the poster actually wants answers from the community. If the question is just wrapping a clear claim (e.g. "Is it just me or has Rodri looked slow?", "We should start X. Who's with me?"), label it by the claim, which is usually `opinion`.
 - `share` vs `opinion`: If the main point is a stat, result, or news item and any judgment is one short add-on (e.g. "OFFICIAL: X signs a new deal. Massive news!"), it is `share`. If the judgment is the main point and the stat is used as evidence for it, it is `opinion`.
 
-
-
 ---
 
 ## The Dataset
-
-<!-- Where you collected from, how you labelled, your counts, and three hard
-     cases. -->
 
 **Where the posts came from:** The 400 newest posts on r/MCFC, pulled from the subreddit's RSS feed with `fetch_posts.py` (Reddit blocks the `.json` endpoint) into `raw_posts.csv`. I kept 266: posts that can't be understood without their image or video were removed, and so were exact duplicates (mostly the repeated Daily Discussion thread). Post text is not trimmed.
 
@@ -143,9 +113,6 @@ Related rules for the other boundaries:
 | **Total** | 266 | 100% |
 
 **Three hard cases**
-
-<!-- Any post that made you pause: what it was, which two labels it could have
-     been, and what you chose. These are worth more than the easy 190. -->
 
 *(Drafted during AI pre-labeling; every hard call is also written in that row's `note` column in labels.csv.)*
 
@@ -174,17 +141,13 @@ Related rules for the other boundaries:
 
 ## The Training Run
 
-<!-- Your starting model, your settings, and anything you changed and why. -->
-
 **Base model:** `distilbert-base-uncased`
 
 **Settings:** 3 epochs, learning rate 2e-5, batch size 16, max length 128 tokens, seed 42. Trained on **cpu** (no GPU), torch 2.14.1+cpu.
 
 **Anything I changed from the defaults, and why:** Nothing; all defaults.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:**
 
 train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 
@@ -197,18 +160,9 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 
 `question` and `vent` have only 5 test examples each (under ~8), so their F1 will swing a lot between seeds.
 
-
-
 ---
 
 ## How I Used AI
-
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
 
 **Moment 1**
 
@@ -232,17 +186,11 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 
 **Pre-labelling disclosure:** AI pre-labeled the batch and I reviewed and corrected every row; the first 20 rows were labeled cold (by hand, before seeing any AI labels).
 
-<!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
-
-     Don't fill these in during unit 5.
-     ═══════════════════════════════════════════════════════════════════ -->
+<!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════ -->
 
 ---
 
 ## Baseline vs. Trained
-
-<!-- Both models on the same posts. `python baseline.py --trained results.json`
-     prints this table for you. -->
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
@@ -256,22 +204,13 @@ train 186 · val 40 · test 40 (stratified 70/15/15 by the notebook)
 Baseline: `facebook/bart-large-mnli` zero-shot with my definitions from `label_definitions.txt`, scored on the same 40 posts in `test_split.csv`. A second run with bare label names only (`baseline_results_bare.json`) got accuracy 0.500 and macro F1 0.360.
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
 I predict my trained model will lose on all four features, because it only learns to label share and ignores the remaining three labels, which will enlarge the gap between the real percentage and the predicted percentage for all four labels.
 
 **What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
-
-
 
 ---
 
 ## Run Log — Before
-
-<!-- Five criteria across three seeds. The notebook's section 6 prints the
-     spread table; the Target and Verdict columns are yours. -->
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
@@ -294,9 +233,6 @@ Device: **cpu** (torch 2.14.1+cpu), all three seeds. Full numbers in `results_th
 
 ### Confusion matrix
 
-<!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
-     An image of a matrix earns nothing. -->
-
 Seed 42 (seeds 7 and 2024 are identical):
 
 | true \ predicted | share | question | vent | opinion |
@@ -310,14 +246,9 @@ Seed 42 (seeds 7 and 2024 are identical):
 
 8 real posts were recognized as share, and 0 real post went to the other categories. The model did not learn how to classify share versus categories. It simply predicts the majority label share for every post.
 
-
-
 ---
 
 ## Verdicts and Diagnoses
-
-<!-- MET or MISSED against LAST UNIT's target. The target has to hold across
-     all three seeds, not turn up sometimes. -->
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
@@ -328,15 +259,6 @@ Seed 42 (seeds 7 and 2024 are identical):
 | 5 | Agreement with a second labeler | ≥ 80% | NOT TESTED YET | No second person has labeled the 40-post sample yet, so there is no rate to compare |
 
 **Diagnoses**
-
-<!-- For each miss: the cause, and how you know. The four common causes are:
-     too few examples for a label, a boundary you applied inconsistently, a
-     genuinely hard label pair, and a task the model can't reach from this
-     much data.
-
-     ⚠️ Use your agreement report as evidence. It is the only instrument you
-     have that can tell a LABELLING problem from a MODEL problem, and this
-     section is graded on whether you used it that way. -->
 
 Criteria 1–4 (all missed): it's really one problem. The model just guessed the most common label every time.
 
@@ -350,43 +272,15 @@ What I can't rule out: I never got the staff labels, so I don't have an agreemen
 
 Criterion 5: not tested yet, because nobody else has labeled the 40-post sample.
 
-
-
 ---
 
 ## Agreement Report
 
-<!-- Your rate against the staff set, and every disagreement adjudicated.
-
-     Remember you labelled these 30 under the STAFF taxonomy in
-     data/staff_taxonomy.md, not your own — so every argument below is made
-     from those definitions and those decision rules. -->
-
 **Agreement rate:** not computed. I did not receive `data/staff_labels.csv` from my TF, so there was nothing to compare against and `agreement.py` could not produce `agreement_results.json`. My 30 labels, made under the staff taxonomy before seeing any staff answers, are in `my_staff_labels.csv` (committed in f91513a).
-
-<!-- Nobody grades this number. A 60% who argues every disagreement from the
-     stated rules beats a 95% who wrote "staff was right" nine times. Several
-     of the 30 were chosen because they're genuinely ambiguous — you should be
-     winning some of these. -->
 
 **Disagreements**
 
-<!-- Three lines each: the post, both labels, and who you think is right and
-     why — grounded in the staff definitions you were both applying.
-
-     Then sort each into one of three piles:
-       (a) the rule covered it and I applied it loosely → a consistency problem
-       (b) the rule genuinely doesn't say               → a gap in the definitions
-       (c) the rule is ambiguous here and my reading is defensible → argue it.
-           This is a legitimate win.
-
-     Pile (a) is the one that matters most for your diagnosis: if you applied a
-     written rule two different ways on 30 posts, that is direct evidence about
-     what you did across your own 200. -->
-
 No disagreements to adjudicate, because there were no staff labels to compare against.
-
-
 
 ---
 
@@ -430,64 +324,18 @@ Yes, it helped, but not enough to hit any criterion. Before, the model called ev
 
 The problem now is that the results jump around a lot from seed to seed. Accuracy goes anywhere from 0.650 to 0.825, a 17.5-point spread, and vent gets 0 on two seeds but 0.667 on the third. Each test split only has 5 vent and 5 question posts, so getting one or two more right or wrong swings the score a lot. That means the second problem I pointed out, not having enough examples, is now the main thing holding the numbers back.
 
-<!-- If it didn't, say so. Relabelling that didn't help is a genuinely
-     interesting result and earns full credit. -->
-
-
-
 ---
 
 ## What's Still Broken
-
-<!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
 Criteria 1–4 are still missed, and the after-run points at the same fix for all of them: more examples of the small labels. vent and question have only 31 and 37 posts, so each test split gets just 5 of each, and one or two posts decide whether a seed passes. Next I would collect about 30 more vent and 30 more question posts, labeled with the same rules, and re-run the three seeds. vent also needs a look at my opinion vs vent boundary, because 3 real vent posts were called opinion on seed 42 and none went the other way. I stopped here because the unit asks for one change per run, and I ran out of time to collect and label new posts.
 
 Criterion 5 is still not tested: I would need a classmate to label the 40-post sample, which I didn't get to this unit.
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
-<!-- Two sentences. Your confusion matrix is the evidence. -->
 
 I meant vent to capture posts that are pure emotion with no arguable claim, but the model seems to treat any emotional, opinionated-sounding post as opinion: on seed 42, 3 of the 5 real vent posts were called opinion and no opinion post was called vent. It learned share well (F1 0.957 on two seeds) because share posts look different on the surface (scores, stats, news headlines), but the opinion vs vent line depends on whether there's an arguable claim, which is exactly the boundary I found hardest myself.
-
-
-
-<!-- ═════════════════════════════════════════════════════════════════════
-
-     SUBMISSION CHECKLIST — unit 5
-
-       [ ] criteria.md has five numbered criteria, each naming a NUMBER
-       [ ] Each has a reason underneath tied to your data or taxonomy
-       [ ] labels.csv: at least 150 rows, text/label/note, ONE file not split
-       [ ] No label above 70%
-       [ ] All five unit 5 sections have real content
-       [ ] Label Taxonomy includes the decision rule for your hardest boundary
-       [ ] The Dataset includes three hard cases
-       [ ] results.json and test_split.csv committed (the notebook does this)
-       [ ] At least four new commits
-       [ ] Repository URL submitted — WRITE IT DOWN
-
-     SUBMISSION CHECKLIST — unit 6
-
-       [ ] Baseline vs. Trained table, with your prediction written beforehand
-       [ ] Run Log — Before, five criteria across three seeds
-       [ ] Confusion matrix TYPED AS A MARKDOWN TABLE
-       [ ] A verdict on every criterion
-       [ ] A diagnosis for every miss, using the agreement report as evidence
-       [ ] Agreement Report with every disagreement adjudicated
-       [ ] One improvement, with Run Log — After
-       [ ] What's Still Broken
-       [ ] results_three_seeds_before.json, results_three_seeds_after.json,
-           baseline_results.json and
-           agreement_results.json committed
-       [ ] At least four new commits
-       [ ] The SAME repository URL as last unit
-
-     Do not delete and recreate this repository.
-     ═════════════════════════════════════════════════════════════════════ -->
 
 ---
 
